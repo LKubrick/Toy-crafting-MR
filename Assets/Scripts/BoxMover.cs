@@ -15,6 +15,8 @@ public class BoxMover : MonoBehaviour
     private Quaternion endRotation;
     private Vector3 airPosition;
 
+    private bool canActivateBox = true;
+
     void Start()
     {
         initialPosition = transform.position;
@@ -26,13 +28,32 @@ public class BoxMover : MonoBehaviour
 
         // Set the toy airplane on the table to inactive at the start
         toyOnTable.SetActive(false);
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        ToyInfo toyInfo = other.GetComponent<ToyInfo>();
+        if (toyInfo != null && canActivateBox == true)
+        {
+            // Retrieve the toy objects from the colliding object
+            toyInBox = toyInfo.toyInBox;
+            toyOnTable = toyInfo.toyOnTable;
 
+            // Change the toys
+            ChangeToys();
+
+            canActivateBox = false;
+        }
+    }
+    
+    private void ChangeToys()
+    {
         StartCoroutine(StartMovingAfterDelay());
     }
 
     IEnumerator StartMovingAfterDelay()
     {
-        yield return new WaitForSeconds(15f); // 10 seconds for the lid to open, then 5 seconds delay
+        yield return new WaitForSeconds(delayBeforeMoving); 
         StartCoroutine(RiseAndFlipBox());
     }
 
@@ -75,5 +96,6 @@ public class BoxMover : MonoBehaviour
 
         transform.position = initialPosition;
         transform.rotation = initialRotation;
+        canActivateBox = true;
     }
 }

@@ -82,6 +82,7 @@ public class ToyCraftingManager : MonoBehaviour
             case ToyType.Robot:
                 Debug.Log("Robot assembly complete!");
                 //TODO: Additional logic
+                onToyDone.Invoke();
             break;
             case ToyType.Lego:
                 Debug.Log("Lego assembly complete!");
