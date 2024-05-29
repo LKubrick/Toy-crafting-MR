@@ -9,6 +9,8 @@ public class ToyCraftingManager : MonoBehaviour
     private Dictionary<ToyType, Toy> toyPartsRemaining;
     public AnimationManager _AnimationManager;
 
+    public UnityEvent onToyDone;
+
     private void Start()
     {
         toyPartsRemaining = new Dictionary<ToyType, Toy>();
@@ -75,6 +77,7 @@ public class ToyCraftingManager : MonoBehaviour
                 Debug.LogWarning("Done");
                 //TODO: Additional logic
                 _AnimationManager.AeroplaneAnim();
+                onToyDone.Invoke();
             break;
             case ToyType.Robot:
                 Debug.Log("Robot assembly complete!");
