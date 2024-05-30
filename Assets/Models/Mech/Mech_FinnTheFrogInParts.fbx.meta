@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f1615ae4f8e9e94999af27eb7b6485f
+guid: c87bb400662a77c43803d7b705c5a6f2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -9,11 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Atlas
     second: {fileID: 2100000, guid: def895b5ebc9def4596980ab13de80a0, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Atlas
-    second: {fileID: 2800000, guid: a4658d80338224843aa739fd7549940f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -109,7 +104,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

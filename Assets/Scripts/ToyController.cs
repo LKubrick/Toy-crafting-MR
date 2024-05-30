@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
@@ -28,6 +30,8 @@ public class ToyController : MonoBehaviour
 
     private const float JumpDelay = 0.16f;
 
+    private UniversalAdditionalCameraData centerEyeAnchor;
+
     private enum JumpingState
     {
         Grounded,
@@ -39,6 +43,15 @@ public class ToyController : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        
+
+        centerEyeAnchor = FindObjectOfType<UniversalAdditionalCameraData>();
+    }
+
+    private void Start()
+    {
+        movementFrameOfReference = centerEyeAnchor.transform;
+        respawnTransform = centerEyeAnchor.transform;
     }
 
     void Update()
