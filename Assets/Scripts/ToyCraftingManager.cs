@@ -9,7 +9,8 @@ public class ToyCraftingManager : MonoBehaviour
     private Dictionary<ToyType, Toy> toyPartsRemaining;
     public AnimationManager _AnimationManager;
 
-    public UnityEvent onToyDone;
+    public UnityEvent onAirplaneDone;
+    public UnityEvent onRobotDone;
 
     private void Start()
     {
@@ -90,12 +91,12 @@ public class ToyCraftingManager : MonoBehaviour
                 Debug.LogWarning("Done");
                 //TODO: Additional logic
                 _AnimationManager.AeroplaneAnim();
-                onToyDone.Invoke();
+                onAirplaneDone.Invoke();
             break;
             case ToyType.Robot:
                 Debug.Log("Robot assembly complete!");
                 //TODO: Additional logic
-                onToyDone.Invoke();
+                onRobotDone.Invoke();
             break;
             case ToyType.Lego:
                 Debug.Log("Lego assembly complete!");

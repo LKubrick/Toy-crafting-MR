@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    public void NextScene()
+    public void RobotScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("ToyController");
+    }    
+    public void AirplaneScene()
+    {
+        SceneManager.LoadScene("AirplaneController");
     }
 }

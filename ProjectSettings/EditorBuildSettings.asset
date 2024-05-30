@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToyController.unity
     guid: 964ed09ff48e92e429722551e844fa48
+  - enabled: 1
+    path: Assets/Scenes/AirplaneController.unity
+    guid: 48f5e0442e4d8104dad2cf3b98a65487
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 398d945149746a94899cafbfeddf8c9f,
       type: 2}
