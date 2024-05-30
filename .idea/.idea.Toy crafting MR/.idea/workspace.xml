@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f3c4136c-823d-4806-a7a4-42a07f6edcab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Toy crafting MR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Toy crafting MR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VirtualRoomScene 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VirtualRoomScene 1.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VirtualRoomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VirtualRoomScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoxMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoxMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ToyCraftingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ToyCraftingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +106,7 @@
       <workItem from="1716991274621" duration="625000" />
       <workItem from="1717007293235" duration="16000" />
       <workItem from="1717007349744" duration="243000" />
-      <workItem from="1717007609172" duration="7749000" />
+      <workItem from="1717007609172" duration="8479000" />
     </task>
     <servers />
   </component>
@@ -124,24 +117,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BoxMover.cs</url>
-          <line>38</line>
-          <properties documentPath="C:\Unity\Toy crafting MR\Assets\Scripts\BoxMover.cs" initialLine="38" containingFunctionPresentation="Method 'OnTriggerEnter'">
-            <startOffsets>
-              <option value="1296" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1324" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

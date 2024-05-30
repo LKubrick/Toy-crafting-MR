@@ -628,8 +628,23 @@ MonoBehaviour:
   toyInBox: {fileID: 698741919}
   toyOnTable: {fileID: 1756981230006109151}
   riseSpeed: 2
-  delayBeforeMoving: 5
+  delayBeforeMoving: 3
   flipSpeed: 0.5
+  onToyChosed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 53545027}
+        m_TargetAssemblyTypeName: TreasureBox, Assembly-CSharp
+        m_MethodName: OpenLid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &65394496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4869577802921675287, guid: ea16c3c8c1688234fa81a4f39339bf1b,
@@ -15767,7 +15782,7 @@ PrefabInstance:
     - target: {fileID: 8023012721429820327, guid: f453be07e9d07e84fa3d0305afdeecb8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8579205381923373240, guid: f453be07e9d07e84fa3d0305afdeecb8,
         type: 3}
@@ -18121,7 +18136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1775750382025333237
 GameObject:
   m_ObjectHideFlags: 0

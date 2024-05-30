@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,4 +14,9 @@ public class Toy : MonoBehaviour
 {
     public ToyType toyType;
     public int partsToSnap;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 }

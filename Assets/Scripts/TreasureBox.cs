@@ -13,25 +13,18 @@ public class TreasureBox : MonoBehaviour
     {
         initialRotation = lid.transform.localRotation;
         openRotation = initialRotation * Quaternion.Euler(-90, 0, 0); // Adjust the rotation as needed
-        StartCoroutine(DelayedOpen());
     }
 
-    IEnumerator DelayedOpen()
-    {
-        yield return new WaitForSeconds(10f); // Wait for 10 seconds
-        StartCoroutine(OpenLid());
-    }
 
-    IEnumerator OpenLid()
+    public void OpenLid()
     {
         isOpening = true;
         float elapsedTime = 0;
 
-        while (elapsedTime < 1f)
+        while (elapsedTime <= 0f)
         {
             lid.transform.localRotation = Quaternion.Slerp(initialRotation, openRotation, elapsedTime);
             elapsedTime += Time.deltaTime * openSpeed;
-            yield return null;
         }
 
         lid.transform.localRotation = openRotation;

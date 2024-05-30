@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class BoxMover : MonoBehaviour
@@ -7,7 +9,7 @@ public class BoxMover : MonoBehaviour
     public GameObject toyInBox; 
     public GameObject toyOnTable; 
     public float riseSpeed = 1.0f; 
-    public float delayBeforeMoving = 5.0f; 
+    public float delayBeforeMoving = 1.0f; 
     public float flipSpeed = 0.5f; 
 
     private Vector3 initialPosition;
@@ -15,8 +17,9 @@ public class BoxMover : MonoBehaviour
     private Quaternion endRotation;
     private Vector3 airPosition;
 
-    private bool canActivateBox = true;
-
+    public UnityEvent onToyChosed;
+    private bool canChoseToy = true;
+    
     void Start()
     {
         initialPosition = transform.position;
@@ -26,14 +29,12 @@ public class BoxMover : MonoBehaviour
         // Calculate the air position based on the toy airplane's start position + 0.5 meters altitude
         airPosition = toyOnTable.transform.position + Vector3.up * 0.5f;
 
-        // Set the toy airplane on the table to inactive at the start
-        toyOnTable.SetActive(false);
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         ToyInfo toyInfo = other.GetComponent<ToyInfo>();
-        if (toyInfo != null && canActivateBox == true)
+        if (toyInfo != null && canChoseToy)
         {
             // Retrieve the toy objects from the colliding object
             toyInBox = toyInfo.toyInBox;
@@ -41,16 +42,17 @@ public class BoxMover : MonoBehaviour
 
             // Change the toys
             ChangeToys();
-
-            canActivateBox = false;
+            onToyChosed.Invoke();
+            canChoseToy = false;
         }
     }
-    
+
     private void ChangeToys()
     {
+        // Start the movement and flip coroutine if necessary
         StartCoroutine(StartMovingAfterDelay());
     }
-
+    
     IEnumerator StartMovingAfterDelay()
     {
         yield return new WaitForSeconds(delayBeforeMoving); 
@@ -83,6 +85,8 @@ public class BoxMover : MonoBehaviour
 
     IEnumerator ReturnToInitialPosition()
     {
+        canChoseToy = true;
+        
         float elapsedTime = 0;
 
         // Move the box back to its initial position
@@ -96,6 +100,5 @@ public class BoxMover : MonoBehaviour
 
         transform.position = initialPosition;
         transform.rotation = initialRotation;
-        canActivateBox = true;
     }
 }
