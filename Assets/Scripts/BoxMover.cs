@@ -36,6 +36,8 @@ public class BoxMover : MonoBehaviour
         ToyInfo toyInfo = other.GetComponent<ToyInfo>();
         if (toyInfo != null && canChoseToy)
         {
+            toyOnTable.gameObject.SetActive(false);
+            
             // Retrieve the toy objects from the colliding object
             toyInBox = toyInfo.toyInBox;
             toyOnTable = toyInfo.toyOnTable;
@@ -85,7 +87,7 @@ public class BoxMover : MonoBehaviour
 
     IEnumerator ReturnToInitialPosition()
     {
-        canChoseToy = true;
+
         
         float elapsedTime = 0;
 
@@ -100,5 +102,7 @@ public class BoxMover : MonoBehaviour
 
         transform.position = initialPosition;
         transform.rotation = initialRotation;
+        
+        canChoseToy = true;
     }
 }

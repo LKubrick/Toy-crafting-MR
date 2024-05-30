@@ -46,6 +46,12 @@ public class ToyCraftingManager : MonoBehaviour
             Debug.LogError("Toy not in dicionary");
         }
         
+        AudioSource audioSource = arg0.GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        
         Debug.Log($"Toy snapped: {arg0.toyType}. Parts left: {toyPartsRemaining[arg0.toyType].partsToSnap}");
 
         CheckToyCompletion(arg0);
@@ -57,6 +63,13 @@ public class ToyCraftingManager : MonoBehaviour
         {
             toyPartsRemaining[arg0.toyType].partsToSnap++;
         }
+        
+        AudioSource audioSource = arg0.GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        
         Debug.Log($"Toy unsnapped: {arg0.toyType}. Parts left: {toyPartsRemaining[arg0.toyType]}");
     }
 
